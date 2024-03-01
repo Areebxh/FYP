@@ -1,0 +1,101 @@
+
+body{
+    background-color: #4d79d1;
+}
+.left-section {
+    flex: 1;
+    display: flex;
+    justify-content: left;
+    align-items: left;
+}
+
+.left-section img {
+    width: 580px;
+    height: 580px;
+    max-height: 100%;
+}
+
+.login_page{
+    margin-top: 40px;
+    max-width: 100%;
+    width: 400px;
+    color: #000000;
+    height: 5in;
+    padding: 15px;
+    border-radius: 35px;
+    margin-left: 2in;
+    background-color: #ffffff;
+}
+
+.login_page h2{
+
+    font-size: 2rem;
+    margin: 20px 0;
+    letter-spacing: 1px;
+    font-family: 'Poppins', sans-serif;
+    
+}
+
+.login_page input{
+    width: 100%;
+    height: 45px;
+    margin: 10px 0;
+    border: 1px solid #b6b3b3;
+    outline: none;
+    padding: 0 10px;
+    border-radius: 20px;
+}
+.login_page .row{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap-reverse;
+    align-items: flex-start;
+}
+.login_page .row a{
+    color:#4675d4;
+    margin-right: 20px;
+}
+.login_page .row button{
+    margin-top: 10px;
+    width: 100px;
+    border-radius: 10px;
+    padding: 10px 0;
+    color: white;
+    background:#4d79d1;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-right: 10px;
+    border-radius: 15px;
+}
+.login_page p{
+    margin: 10px 0;
+    font-family: 'Poppins', sans-serif;
+    
+}
+.login_page a{
+    color: #4675d4;
+    font-weight: 600;
+}
+
+/* ---------- Facebook / Google ---------------- */
+.login_page .hr{
+    margin: 15px 0;
+
+    font-family: 'Poppins', sans-serif;
+    font-size: small;
+}
+
+
+.login_page .social button{
+    width: 100%;
+    margin: 10px 0;
+    height: 50px;
+    font-size: 14px;
+    font-weight: 200;
+    text-transform: capitalize;
+    letter-spacing: 1.3px;
+    box-shadow: 0 2px 4px #777;
+
+}
+
+

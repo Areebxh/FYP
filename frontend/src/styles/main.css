@@ -1,0 +1,188 @@
+
+  
+  .grid1 {
+    margin: 30px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 150px 150px 150px;
+    grid-gap: 20px;
+    padding: 10px;
+    margin-left: 1in;
+    
+  }
+  
+  #image1 {
+    margin-top: 1in;
+    color: white;
+    justify-content: center;
+    text-align: center;
+    font-size:x-large;
+    margin-left: 20px;
+   
+  }
+  #image1 h2 {
+    color: white;
+    margin: 20px;
+    
+  }
+  #image1 p {
+    margin-top: 20px;
+    color: white;
+  }
+  
+  #image2 img {
+    width: 100%;
+    height: 3.5in;
+    margin-top: 0.2in;
+    margin-left: 0.8in;
+   
+  }
+  
+  .p2 {
+   
+    background-color: rgb(249, 249, 249);
+    text-align: center;
+   
+   
+  }
+  
+  .page2 h1 {
+    padding: 0.5in;
+    color: white;
+  }
+  
+  .headingp2 h1{
+   
+    color: white;
+    font-size: xx-small;
+    
+  }
+  
+  .grid2 {
+   
+   background-color: white;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 250px 250px 100px;
+    grid-gap: 50px;
+    padding: 10px;
+   
+  }
+  
+  .banner{
+   
+    width: 200px;
+   
+
+  }
+  
+  
+  .grid2 div {
+    background-color: white;
+    text-align: center;
+    padding: 20px;
+    cursor: pointer;
+    
+  }
+
+  .grid2 h3{
+    font-family: 'Poppins', sans-serif;
+  }
+
+  .grid2 img{
+    width: 3in;
+  }
+  .p2 div img:hover {
+    transform: scale(1.1);
+  }
+  .p3{
+    background-color: white;
+  }
+  
+  .page3 #heading {
+    text-align: center;
+    padding: 0.4in;
+  }
+  .page3 h1 {
+    margin: 0.3in;
+   
+  }
+  
+  .grid3 {
+    display: grid;
+    grid-template-rows: 250px 250px 250px 300px;
+    grid-gap: 30px;
+  }
+
+
+
+  
+  .grid3 div {
+    text-align: center;
+  }
+   
+  #heading {
+    margin-top: 0.2in;
+    margin-bottom: 0.2in;
+  }
+  
+  .grid3 img
+  {
+    width: 80%;
+    height: 5in;
+
+  
+  }
+  .grid3 h5 {
+    margin-top: 20px;
+    
+  }
+  
+  
+  
+  .grid4 {
+    display: grid;
+    grid-template-columns: 2fr 2fr 2fr 2fr;
+    grid-gap: 40px;
+   
+  }
+  
+  .foo {
+   
+    margin-bottom: 60px;
+  }
+  
+  .foot {
+ 
+    color: white;
+   
+  }
+  .foot p {
+    text-align: center;
+  }
+  
+  .grid4 div {
+    margin: 0.5in;
+    
+  }
+  
+  @media (max-width: 400px) {
+    .grid1,
+    .grid2,
+    .grid3,
+    .grid4 {
+      grid-template-columns: 1fr;
+    }
+    .flex {
+      flex-direction: column;
+    }
+    header {
+      height: 150px;
+    }
+    .abc {
+      display: none;
+    }
+  }
+  
+  
+  

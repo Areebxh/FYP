@@ -1,0 +1,62 @@
+
+
+.pass-img {
+    flex: 1;
+    display: flex;
+    justify-content: left;
+    align-items: left;
+}
+
+.pass-img img {
+    width: 580px;
+    height: 580px;
+    max-height: 100%;
+    margin-left: 40px;
+}
+
+.fg_pass{
+    margin-top: 40px;
+    max-width: 100%;
+    width: 400px;
+    color: #000000;
+    height: 5in;
+    padding: 15px;
+    border-radius: 35px;
+    margin-left: 2in;
+    background-color: #ffffff;
+}
+
+/* ------------- Forgot Password --------------- */
+.fg_pass h2{
+    color: #555;
+    text-transform: uppercase;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    font-size: 2rem;
+    margin: 50px 0;
+    letter-spacing: 1.3px;
+}
+.fg_pass .row{
+    max-width: 500px;
+    margin: auto;
+    padding: 0 10px;
+}
+.fg_pass .row input{
+    width: 100%;
+    height: 45px;
+    border: 1px solid #ccc;
+    outline: none;
+    padding: 0 15px;
+    border-radius: 15px;
+    margin: 5px 0;
+}
+.fg_pass .row button{
+    background: #4d79d1;
+    color:white;
+    padding: 10px 30px;
+    text-transform: uppercase;
+    letter-spacing: 1.3px;
+    border-radius: 10px;
+    margin-top: 15px;
+    margin-left: 60px;
+}

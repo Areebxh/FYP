@@ -42,7 +42,55 @@ const updateUser= async (req, res) => {
     } catch (err) {
         return res.status(500).json({msg: err.message})
     }
+
 }
 
+    const getUsers=  async (req, res) => {
+        const result = await Users.find({}, { _id: 0 })
+          .then((response) => {
+            res.send(response);
+          })
+          .catch({ message: "error" });
+      };
+      
+    const deleteUser= async (req, res) => {
+        const result = await Users.deleteOne({
+          userid: req.body.userid,
+        });
+        if (result.deletedCount == 1) {
+          console.log("User deleted");
+        } else {
+          console.log("User not found");
+        }
+        res.send({ status: result });
+      };
+      
+    const blockUser= async (req, res) => {
+        await Users.updateOne({ userid: req.body.userid }, { isBlock: true })
+          .then((response) => {
+            console.log(response);
+            res.send({ blocked: response.modifiedCount });
+          })
+          .catch((err) => {
+            res.send(err);
+          });
+      };
+      
+    const unBlockUser= async (req, res) => {
+        await Users.updateOne({ userid: req.body.userid }, { isBlock: false })
+          .then((response) => {
+            console.log(response);
+            res.send({ unblocked: response.modifiedCount });
+          })
+          .catch((err) => {
+            res.send(err);
+          });
+      };
 
-module.exports={getUserInfo , updateUser , logout}
+
+
+
+
+
+
+module.exports={getUserInfo , updateUser , logout , getUsers , deleteUser , blockUser ,unBlockUser};

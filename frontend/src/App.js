@@ -16,9 +16,9 @@ function App() {
     <div className="App">
       <Header/>
       <Body/>
-      <Chatbot/>
+      {/* <Chatbot/>
       <SideBar/>
-      <AdminHome/>
+      <AdminHome/> */}
      
     </div>
   );

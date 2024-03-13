@@ -34,6 +34,8 @@ app.use('/user', require('./routes/registerRouter'))
 app.use('/user', require('./routes/loginRouter'))
 app.use('/user', require('./routes/userRouter'))
 app.use('/api', require('./routes/uploadimgRouter'))
+app.use('/owner',require('./routes/hostelRouter'));
+
 
 
 

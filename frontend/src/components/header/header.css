@@ -1,7 +1,11 @@
+
+body.header{
+    background-color:#4d79d1 ;
+}
+
 header{
     width: 100%;
     min-height: 100px;
-    background: #4d79d1;
     display: flex;
     justify-content: space-between;
     align-items: center;

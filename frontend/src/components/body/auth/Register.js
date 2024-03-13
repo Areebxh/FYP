@@ -4,6 +4,7 @@ import axios from 'axios'
 import {showErrMsg, showSuccessMsg} from '../../utils/notification/Notification'
 import { isEmail,isEmpty,isLength,isMatch,isValidNumber } from '../../utils/validation/Validation'
 import loginImage from '../../../assets/Rehaish.png'
+import '../../../styles/register.css'
 
 
 const initialState = {
@@ -71,6 +72,7 @@ function Register() {
     
 
     return (
+        <body className='login-page'>
         <div className="section">
                 <img
                     src={loginImage} // Replace with the actual path to your image
@@ -153,6 +155,7 @@ function Register() {
           
         </div>
         </div>
+        </body>
     )
 }
 

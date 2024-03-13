@@ -1,4 +1,6 @@
-
+body.login-page{
+    background-color: #4d79d1;
+}
 
 .section {
     flex: 1;

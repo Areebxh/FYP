@@ -1,0 +1,70 @@
+
+.blockbutt,
+.openbutt,
+.dellbutt {
+  text-transform: uppercase;
+  background-color: red;
+  font-size: 16px;
+  letter-spacing: 4px;
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 4px;
+  padding: 10px;
+  transition: 0.5s;
+  width: 70;
+  display: block;
+}
+
+.openbutt {
+  background-color: green;
+}
+.blockbutt {
+  background-color: orange;
+}
+
+.blockbutt,
+.openbutt,
+.dellbutt:focus {
+  outline: none;
+}
+
+.dellbutt:hover {
+  transition: 0.5s;
+  background: white;
+  border-radius: 5px;
+  color: red;
+  /* box-shadow: 0 0 5px red, 0 0 5px red, 0 0 5px red, 0 0 5px red; */
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.3);
+}
+
+.openbutt:hover {
+  transition: 0.5s;
+  background: white;
+  border-radius: 5px;
+  color: green;
+  /* box-shadow: 0 0 5px red, 0 0 5px red, 0 0 5px red, 0 0 5px red; */
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.3);
+}
+.blockbutt:hover {
+  transition: 0.5s;
+  background: white;
+  border-radius: 5px;
+  color: orange;
+  /* box-shadow: 0 0 5px red, 0 0 5px red, 0 0 5px red, 0 0 5px red; */
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.3);
+}
+
+.box {
+  /* border: 3px solid red; */
+  margin-right: 1in;
+  margin-left: 1in;
+  /* height: 5in; */
+  /* overflow: auto;  */
+}
+#title {
+  text-align: center;
+  margin: 0.5in;
+}

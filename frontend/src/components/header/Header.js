@@ -1,12 +1,13 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
+import '../header/header.css'
 
 
 function Header() {
 
     return (
         <div>
-        <header>
+        <header className='body'>
             <div className="logo">
                 <h1><Link to="/">Rehaish</Link></h1>
             </div>

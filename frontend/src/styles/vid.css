@@ -1,0 +1,151 @@
+.main {
+    width: 100%;
+    line-height: 0em;
+    /* height: 100vh; */
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+  
+  .main video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .textC {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    margin: 25% auto auto auto;
+    text-align: center;
+    position: absolute;
+  }
+  
+  .textC h1:nth-child(1) {
+    color: white;
+    font-family: "Fira Code", monospace;
+    font-weight: 800;
+    font-size: 30px;
+    margin: 0 0 0 35%;
+    text-align: left;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 170px;
+    animation: type 2s steps(40, end) forwards;
+  }
+  .vid2 {
+    display: none;
+  }
+  
+  .textC h1:nth-child(2) {
+    opacity: 0;
+    font-family: "Work Sans", sans-serif;
+    margin: 0 auto auto auto;
+    background-color: #cbc5b4;
+  
+    /* background: linear-gradient(to right, #ff497c, #ff497c, #ff497c); */
+    font-weight: 800;
+    font-size: 80px;
+    width: 1000px;
+    text-align: center;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    overflow: hidden;
+    animation: shring-animation 2.2s steps(40, end) 2s forwards,
+      blink 0.5s step-end infinite alternate;
+  }
+  
+  @keyframes shring-animation {
+    0% {
+      background-position: 0 0;
+      opacity: 0;
+      width: 0;
+    }
+    1% {
+      background-position: 0 0;
+      opacity: 1;
+      border-right: 1px solid #2f234f;
+    }
+    50% {
+      background-position: 150px 0;
+      opacity: 1;
+      border-right: 1px solid #2f234f;
+    }
+    100% {
+      background-position: 400px 0;
+      opacity: 1;
+      border-right: 1px solid #2f234f;
+    }
+  }
+  
+  @keyframes type {
+    0% {
+      width: 0;
+    }
+    1%,
+    99% {
+      border-right: 1px solid #ff497c;
+    }
+    100% {
+      border-right: none;
+    }
+  }
+  
+  @keyframes blink {
+    50% {
+      border-color: transparent;
+    }
+  }
+  
+  @media (max-width: 600px) {
+    /* .textC {
+      display: none;
+    } */
+    .vid1 {
+      display: none;
+    }
+    .vid2 {
+      width: 100%;
+      line-height: 0em;
+      /* height: 100vh; */
+      display: flex;
+      text-align: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+    .textC {
+      margin-top: 2in;
+    }
+  
+    .textC h1:nth-child(1) {
+      color: white;
+      font-family: "Fira Code", monospace;
+      font-weight: 800;
+      font-size: 30px;
+  
+      margin: 0 auto auto auto;
+      text-align: left;
+      white-space: nowrap;
+      overflow: hidden;
+      width: 170px;
+      animation: type 2s steps(40, end) forwards;
+    }
+    .textC h1:nth-child(2) {
+      opacity: 0;
+      font-family: "Work Sans", sans-serif;
+      margin: 0 auto auto auto;
+      background-color: #cbc5b4;
+      font-weight: 800;
+      font-size: 40px;
+      width: 200px;
+      text-align: center;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      overflow: hidden;
+      animation: shring-animation 2.2s steps(40, end) 2s forwards,
+        blink 0.5s step-end infinite alternate;
+    }
+  }
+  

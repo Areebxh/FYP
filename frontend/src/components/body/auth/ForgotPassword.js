@@ -3,6 +3,7 @@ import axios from 'axios'
 import {isEmail} from '../../utils/validation/Validation'
 import {showErrMsg, showSuccessMsg} from '../../utils/notification/Notification'
 import loginImage from '../../../assets/for.png'
+import "../../../styles/forgotps.css"
 
 const initialState = {
     email: '',

@@ -27,12 +27,16 @@ mongoose.connect(URI, {
     console.log("Connected to mongodb")
 })
 
-//rotes
+//routes
 
+app.use('/admin' , require('./routes/adminRouter'))
 app.use('/user', require('./routes/registerRouter'))
 app.use('/user', require('./routes/loginRouter'))
 app.use('/user', require('./routes/userRouter'))
 app.use('/api', require('./routes/uploadimgRouter'))
+app.use('/owner',require('./routes/hostelRouter'));
+
+
 
 
 const PORT = process.env.PORT || 5000

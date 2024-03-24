@@ -1,0 +1,94 @@
+.profile-container {
+    background-color: #4d79d1;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile-card {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 700px;
+    height: 5in;
+    width: 80%;
+    display: flex;
+   /* Align items to the start (top) of the container */
+    justify-content: space-between; /* Spacing between user details and right section */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.avatar-container {
+   
+   
+    width: 75px;
+    height: 100px;
+    margin-left: 0.3in;
+    
+}
+.hide{
+    display: none;
+}
+
+.avatar-image {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+   
+}
+
+.user-details {
+    flex: 1;
+ 
+    font-family: Arial, Helvetica, sans-serif;
+
+    margin-left: 0.3in;
+}
+
+.user-details h2 {
+    margin-bottom: 10px;
+    font-size: 35px;
+    font-weight: bold;
+    
+}
+
+.user-details p {
+    font-size: 14px;
+    margin-bottom: 5px;
+    
+
+}
+.edith{
+    margin-top: 20px;
+    font-size: larger;
+    font-size: 20px;
+}
+
+.user-details input[type="text"] {
+  
+    margin-bottom: 10px;
+    border-radius: 10px;
+    
+  }
+  
+  .btn {
+    padding: 8px 16px;
+    border-radius: 20px;
+    margin-right: 10px;
+    margin-top: 0.1in;
+  }
+  
+
+  .right-section {
+    flex: 1;
+    display: flex;
+   
+    height: 4.5in; /* Set the height to match the parent container */
+    width: 2.5in;
+   
+
+  }
+  
+  
+  

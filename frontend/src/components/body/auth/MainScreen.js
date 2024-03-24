@@ -37,12 +37,12 @@ export default function MainScreen() {
         <video
           alt="Hero"
           className="absolute inset-0 z-[-1] object-cover object-center"
-          height="100"
+          // height="100vh"
           src={mainvid}
           style={{
             aspectRatio: "1440/600",
             objectFit: "cover",
-            
+            minHeight:"70vh"
           }}
           autoPlay
           loop

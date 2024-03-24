@@ -12,6 +12,7 @@ cloudinary.config({
 const uploadAvatar = {
     uploadAvatar: (req, res) => {
         try {
+            console.log("////////////////////////////////////////")
             const file = req.files.file;
 
             cloudinary.v2.uploader.upload(
@@ -27,7 +28,7 @@ const uploadAvatar = {
 
                     // If no error, continue with the success logic
                     removeTmp(file.tempFilePath);
-                    console.log({ result });
+                    console.log("result is : ", { result });
                     res.json({ url: result.secure_url });
                 }
             );

@@ -4,7 +4,7 @@ import axios from 'axios'
 import { showErrMsg, showSuccessMsg } from '../../utils/notification/Notification'
 import loginImage from '../../../assets/Rehaish.png'
 import '../auth/login.css'
-
+import Cookies from 'js-cookie';
 
 
 
@@ -38,12 +38,19 @@ function Login() {
         e.preventDefault();
         try {
 
-            const res = await axios.post('http://localhost:5000/user/login', { email, password });
-            setUser({ ...user, err: '', success: res.data.msg });
+            const res = await axios.post('http://localhost:5000/user/login', { email, password }).then((response) => {
+                console.log("res is ", response.data)
+                const token = response.data.access_token;
+                const us = response.data.user._id;
+                Cookies.set('access_token', token, { expires: 7 });
+                Cookies.set('currentUser', us, { expires: 7 });
+                setUser({ ...user, err: '', success: response.data });
+                navigate("/main");
+
+            })
 
 
 
-            navigate("/main");
 
         } catch (err) {
             if (err.response && err.response.data && err.response.data.msg) {
@@ -77,62 +84,62 @@ function Login() {
 
         <>
             <body class="login-page">
-            <div className="left-section">
-                <img
-                    src={loginImage} // Replace with the actual path to your image
-                    alt="Login Image"
-                />
+                <div className="left-section">
+                    <img
+                        src={loginImage} // Replace with the actual path to your image
+                        alt="Login Image"
+                    />
 
 
-                <div className="login_page" >
-                    <h2>Login</h2>
-                    {err && showErrMsg(err)}
-                    {success && showSuccessMsg(success)}
+                    <div className="login_page" >
+                        <h2>Login</h2>
+                        {err && showErrMsg(err)}
+                        {success && showSuccessMsg(success)}
 
 
-                    <form onSubmit={handleSubmit}>
-                        <div>
-                            <label htmlFor="email">Email Address</label>
-                            <input type="text" placeholder="Enter email address" id="email"
-                                value={email} name="email" onChange={handleChangeInput} />
+                        <form onSubmit={handleSubmit}>
+                            <div>
+                                <label htmlFor="email">Email Address</label>
+                                <input type="text" placeholder="Enter email address" id="email"
+                                    value={email} name="email" onChange={handleChangeInput} />
+                            </div>
+
+                            <div>
+                                <label htmlFor="password">Password</label>
+                                <input type="password" placeholder="Enter password" id="password"
+                                    value={password} name="password" onChange={handleChangeInput} />
+                            </div>
+
+                            <div className="row">
+                                <button type="submit">Login</button>
+                                <Link to="/forgot">Forgot your password?</Link>
+                            </div>
+                        </form>
+
+                        <div className="hr">Or Login With</div>
+                        <div className="social">
+
+
+                            <GoogleLogin
+
+                                buttonText="Login with Google"
+                                onSuccess={responseGoogle}
+                                onFailure={() => console.log('Login Failed')}
+                                cookiePolicy={'single_host_origin'}
+
+                            />
+
+
                         </div>
 
-                        <div>
-                            <label htmlFor="password">Password</label>
-                            <input type="password" placeholder="Enter password" id="password"
-                                value={password} name="password" onChange={handleChangeInput} />
-                        </div>
+                        <p>New Customer? <Link to="/register">Register</Link></p>
 
-                        <div className="row">
-                            <button type="submit">Login</button>
-                            <Link to="/forgot">Forgot your password?</Link>
-                        </div>
-                    </form>
-
-                    <div className="hr">Or Login With</div>
-                    <div className="social">
-
-
-                        <GoogleLogin
-
-                            buttonText="Login with Google"
-                            onSuccess={responseGoogle}
-                            onFailure={() => console.log('Login Failed')}
-                            cookiePolicy={'single_host_origin'}
-
-                        />
 
 
                     </div>
 
-                    <p>New Customer? <Link to="/register">Register</Link></p>
-
-
 
                 </div>
-
-
-            </div>
             </body>
 
         </>

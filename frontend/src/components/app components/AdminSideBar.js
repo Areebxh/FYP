@@ -7,9 +7,34 @@ import { Link } from "react-router-dom";
 import { Button } from "../ui/button"
 import { Input } from "../ui/input"
 import { DropdownMenuTrigger, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuItem, DropdownMenuContent, DropdownMenu } from "../ui/dropdown-menu"
-import { TableHead, TableRow, TableHeader, TableCell, TableBody, Table } from "../ui/table"
+import { useState } from "react";
+import AdminHome from "./AdminHome";
+import HostelManage from "./HostelManage";
+import ListingApproval from "./ListingApproval";
+import Terms from "./Terms";
 
 export default function SideBar() {
+
+  const [activeOption, setActiveOption] = useState('Home');
+
+
+   // Function to render the active component based on the active option
+  const renderActiveComponent = () => {
+    switch (activeOption) {
+      case 'Home':
+        return <AdminHome />;
+      case 'Hostels':
+        return <HostelManage/>;
+      case 'Listing Approval':
+        return <ListingApproval/>;
+
+      case 'Policies':
+        return <Terms/>;
+      default:
+        return <AdminHome />;
+    }
+  };
+  
     return (
       <div className="grid min-h-screen w-full lg:grid-cols-[280px_1fr]">
         <div className="hidden border-r bg-gray-100/40 lg:block dark:bg-gray-800/40">
@@ -27,43 +52,43 @@ export default function SideBar() {
             <div className="flex-1 overflow-auto py-2">
               <nav className="grid items-start px-4 text-sm font-medium">
                 <Link
-                  className="flex items-center gap-3 rounded-lg px-3 py-2 text-gray-500 transition-all hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50"
+                  className={`flex items-center gap-3 rounded-lg px-3 py-2 text-gray-500 transition-all hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50 ${activeOption === 'Home' ? 'bg-blue-500 text-white' : ''}`}
                   href="#"
+                  onClick={() => setActiveOption('Home')}
                 >
                   <HomeIcon className="h-4 w-4" />
                   Home
                 </Link>
+
                 <Link
-                  className="flex items-center gap-3 rounded-lg px-3 py-2 text-gray-500 transition-all hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50"
+                  className={`flex items-center gap-3 rounded-lg px-3 py-2 text-gray-500 transition-all hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50 ${activeOption === 'Hostels' ? 'bg-blue-500 text-white' : ''}`}
                   href="#"
+                  onClick={() => setActiveOption('Hostels')}
                 >
                   <PackageIcon className="h-4 w-4" />
                   Hostels
                 </Link>
                 <Link
-                  className="flex items-center gap-3 rounded-lg px-3 py-2 text-gray-500 transition-all hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50"
+                  className={`flex items-center gap-3 rounded-lg px-3 py-2 text-gray-500 transition-all hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50 ${activeOption === 'Complaints' ? 'bg-blue-500 text-white' : ''}`}
                   href="#"
+                  onClick={() => setActiveOption('Complaints')}
                 >
                   <AlertTriangleIcon className="h-4 w-4" />
                   Complaints
                 </Link>
                 <Link
-                  className="flex items-center gap-3 rounded-lg px-3 py-2 text-gray-500 transition-all hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50"
+                  className={`flex items-center gap-3 rounded-lg px-3 py-2 text-gray-500 transition-all hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50 ${activeOption === 'Policies' ? 'bg-blue-500 text-white' : ''}`}
                   href="#"
+                  onClick={() => setActiveOption('Policies')}
                 >
                   <FileTextIcon className="h-4 w-4" />
                   Policies
                 </Link>
+            
                 <Link
-                  className="flex items-center gap-3 rounded-lg px-3 py-2 text-gray-500 transition-all hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50"
+                  className={`flex items-center gap-3 rounded-lg px-3 py-2 text-gray-500 transition-all hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50 ${activeOption === 'Listing Approval' ? 'bg-blue-500 text-white' : ''}`}
                   href="#"
-                >
-                  <ShieldCheckIcon className="h-4 w-4" />
-                  Policy Enforcement
-                </Link>
-                <Link
-                  className="flex items-center gap-3 rounded-lg px-3 py-2 text-gray-500 transition-all hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50"
-                  href="#"
+                  onClick={() => setActiveOption('Listing Approval')}
                 >
                   <CheckIcon className="h-4 w-4" />
                   Listing Verification and Approval
@@ -86,15 +111,15 @@ export default function SideBar() {
               <span className="sr-only">Home</span>
             </Link>
             <div className="flex-1">
-              <h1 className="font-semibold text-lg">Hostels</h1>
+              <h1 className="font-semibold text-lg">{activeOption}</h1>
             </div>
             <div className="flex flex-1 items-center gap-4 md:ml-auto md:gap-2 lg:gap-4">
               <form className="ml-auto flex-1 sm:flex-initial">
-                <div className="relative">
+                <div className="relative gap-x-2.5">
                   <SearchIcon className="absolute left-2.5 top-2.5 h-4 w-4 text-gray-500 dark:text-gray-400" />
                   <Input
                     className="pl-8 sm:w-[300px] md:w-[200px] lg:w-[300px] bg-white"
-                    placeholder="Search hostels..."
+                    placeholder="Search Hostels..."
                     type="search"
                   />
                 </div>
@@ -127,59 +152,8 @@ export default function SideBar() {
               </DropdownMenu>
             </div>
           </header>
-          <main className="flex flex-1 flex-col gap-4 p-4 md:gap-8 md:p-6">
-            <div className="border shadow-sm rounded-lg">
-              
-              <Table>
-                <TableHeader>
-                  <TableRow>
-                    <TableHead className="w-[100px]">Hostel ID</TableHead>
-                    <TableHead>Hostel Name</TableHead>
-                    <TableHead className="hidden md:table-cell">Location</TableHead>
-                    <TableHead className="hidden md:table-cell">Rooms</TableHead>
-                    <TableHead className="hidden sm:table-cell">Status</TableHead>
-                  </TableRow>
-                </TableHeader>
-                <TableBody>
-                  <TableRow>
-                    <TableCell className="font-medium">1</TableCell>
-                    <TableCell className="font-medium">Sunset Hostel</TableCell>
-                    <TableCell className="hidden md:table-cell">Miami, Florida</TableCell>
-                    <TableCell className="hidden md:table-cell">25</TableCell>
-                    <TableCell className="hidden sm:table-cell">Active</TableCell>
-                  </TableRow>
-                  <TableRow>
-                    <TableCell className="font-medium">2</TableCell>
-                    <TableCell className="font-medium">City Lights Hostel</TableCell>
-                    <TableCell className="hidden md:table-cell">New York City, New York</TableCell>
-                    <TableCell className="hidden md:table-cell">30</TableCell>
-                    <TableCell className="hidden sm:table-cell">Active</TableCell>
-                  </TableRow>
-                  <TableRow>
-                    <TableCell className="font-medium">3</TableCell>
-                    <TableCell className="font-medium">Tranquil Inn</TableCell>
-                    <TableCell className="hidden md:table-cell">Sedona, Arizona</TableCell>
-                    <TableCell className="hidden md:table-cell">20</TableCell>
-                    <TableCell className="hidden sm:table-cell">Active</TableCell>
-                  </TableRow>
-                  <TableRow>
-                    <TableCell className="font-medium">4</TableCell>
-                    <TableCell className="font-medium">Beachcomber Hostel</TableCell>
-                    <TableCell className="hidden md:table-cell">Honolulu, Hawaii</TableCell>
-                    <TableCell className="hidden md:table-cell">40</TableCell>
-                    <TableCell className="hidden sm:table-cell">Active</TableCell>
-                  </TableRow>
-                  <TableRow>
-                    <TableCell className="font-medium">5</TableCell>
-                    <TableCell className="font-medium">Alpine Bunkhouse</TableCell>
-                    <TableCell className="hidden md:table-cell">Aspen, Colorado</TableCell>
-                    <TableCell className="hidden md:table-cell">15</TableCell>
-                    <TableCell className="hidden sm:table-cell">Active</TableCell>
-                  </TableRow>
-                </TableBody>
-              </Table>
-            </div>
-          </main>
+          <div className="mx-12">{renderActiveComponent()}
+          </div>
         </div>
       </div>
     )

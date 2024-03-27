@@ -7,7 +7,8 @@ import SideBar from "./components/app components/AdminSideBar";
 import AdminHome from "./components/app components/AdminHome";
 import ListingApproval from "./components/app components/ListingApproval";
 import Terms from "./components/app components/Terms";
-
+import UserManage from "./components/app components/UserManage";
+import HostelManage from "./components/app components/HostelManage";
 
 
 function App() {
@@ -18,11 +19,14 @@ function App() {
     <div className="App">
       {/* <Header/>
       <Body/> */}
-      <ListingApproval/> 
-      <Terms/>
+      {/* <ListingApproval/> 
+      <Terms/> */}
+      {/* <UserManage/>
+      <HostelManage/> */}
       {/* <Chatbot/>
       <SideBar/>
       <AdminHome/> */}
+      <SideBar/>
      
     </div>
   );

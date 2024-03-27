@@ -25,7 +25,7 @@ function Body() {
                 <Route path="/profile" element={<Profile />} />
                 <Route path="/usermanage" element={<UserManage />} />
                 <Route path="/hostelmanage" element={<HostelManage />} />
-
+                
 
 
 
